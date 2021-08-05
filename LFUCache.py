@@ -37,7 +37,6 @@ class LFUCache:
             del self.key_frequency[delete_key]
 
     def calculate_size(self):
-        print(sys.getsizeof(self.frequency_keys))
         self.size = sys.getsizeof(self.frequency_keys)
         return self.size
 
@@ -64,7 +63,6 @@ class LFUCache:
         # prevent memory leak
         if not self.frequency_keys[frequency]:
             del self.frequency_keys[frequency]
-            print("Now empty")
         return value
 
 
